@@ -12,6 +12,7 @@ import GradebookPage from 'containers/GradebookPage';
 import './App.scss';
 import Head from './head/Head';
 import messages from './i18n';
+import { IntlProvider } from '@edx/frontend-platform/i18n';
 
 const App = () => (
   <AppProvider store={store}>
