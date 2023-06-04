@@ -11,25 +11,28 @@ import store from 'data/store';
 import GradebookPage from 'containers/GradebookPage';
 import './App.scss';
 import Head from './head/Head';
+import messages from './i18n';
 
 const App = () => (
   <AppProvider store={store}>
-    <Head />
-    <Router>
-      <div>
-        <Header />
-        <main>
-          <Switch>
-            <Route
-              exact
-              path={routePath}
-              component={GradebookPage}
-            />
-          </Switch>
-        </main>
-        <Footer logo={process.env.LOGO_POWERED_BY_OPEN_EDX_URL_SVG} />
-      </div>
-    </Router>
+  <IntlProvider defaultLocale='mn' locale='mn' messages={messages.mn}>
+      <Head />
+      <Router>
+        <div>
+          <Header />
+          <main>
+            <Switch>
+              <Route
+                exact
+                path={routePath}
+                component={GradebookPage}
+              />
+            </Switch>
+          </main>
+          <Footer logo={process.env.LOGO_POWERED_BY_OPEN_EDX_URL_SVG} />
+        </div>
+      </Router>
+  </IntlProvider>
   </AppProvider>
 );
 
