@@ -15,24 +15,24 @@ import messages from './i18n';
 
 const App = () => (
   <AppProvider store={store}>
-  <IntlProvider defaultLocale='mn' locale='mn' messages={messages.mn}>
-      <Head />
-      <Router>
-        <div>
-          <Header />
-          <main>
-            <Switch>
-              <Route
-                exact
-                path={routePath}
-                component={GradebookPage}
-              />
-            </Switch>
-          </main>
-          <Footer logo={process.env.LOGO_POWERED_BY_OPEN_EDX_URL_SVG} />
-        </div>
-      </Router>
-  </IntlProvider>
+    <IntlProvider defaultLocale='mn' locale='mn' messages={messages.mn}>
+        <Head />
+        <Router>
+          <div>
+            <Header />
+            <main>
+              <Switch>
+                <Route
+                  exact
+                  path={routePath}
+                  component={GradebookPage}
+                />
+              </Switch>
+            </main>
+            <Footer logo={process.env.LOGO_POWERED_BY_OPEN_EDX_URL_SVG} />
+          </div>
+        </Router>
+    </IntlProvider>
   </AppProvider>
 );
 
